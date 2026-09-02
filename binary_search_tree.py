@@ -144,4 +144,28 @@ class BST:
     
     
             
-bst = BST()
+# Quick interactive test - paste this at the bottom
+if __name__ == "__main__":
+    bst = BST()
+    
+    # Insert some values
+    for num in [10, 5, 15, 3, 7, 12, 18]:
+        bst.insert(num)
+    
+    print()
+    print("*********"*10)
+    
+    print("Inorder (sorted):", bst.inorder())      # [3, 5, 7, 10, 12, 15, 18]
+    print("Preorder:", bst.preorder())             # [10, 5, 3, 7, 15, 12, 18]
+    print("Postorder:", bst.postorder())           # [3, 7, 5, 12, 18, 15, 10]
+    print("Min:", bst.min_value(bst.root))         # 3
+    print("Max:", bst.max_value(bst.root))         # 18
+    print("Size:", bst.size())                     # 7
+    print("Search 7:", bst.search(7).item)         # 7 (or None if not found)
+    
+    bst.delete(10)  # Delete root with two children
+    print("After deleting 10:", bst.inorder())     # [3, 5, 7, 12, 15, 18]
+    
+    
+    print()
+    print("*********"*10)
